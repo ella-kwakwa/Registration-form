@@ -24,7 +24,7 @@ input {
 }
 
 .logo {
-  width: 150px;
+  width: 200px;
 }
 
 .photo-box {
@@ -98,5 +98,6 @@ button {
     color: #000;
   }
 }
+
 
 
