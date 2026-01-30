@@ -12,93 +12,81 @@
   <!-- HEADER -->
   <div class="header">
     <img src="HSE_logo.png" alt="HSE Drive Logo" class="logo">
-
-
     <div>
-         <h5>Tel: 0302712082/0501398025</h5>
-         <h5>Email: hsedrive7@gmail.com</h5>
-         <h5>Website: Hsedrivegh.com</h5>
-         <h5>Loc: Sakumono Estate junction, adjacent C&J Hospital</h5>
+      <h5>Tel: 0302712082 / 0501398025</h5>
+      <h5>Email: hsedrive7@gmail.com</h5>
+      <h5>Website: Hsedrivegh.com</h5>
+      <h5>Loc: Sakumono Estate junction, adjacent C&J Hospital</h5>
     </div>
+  </div>
 
-   </div>
-
-
-    <div class="photo-box" style="float: right;">
-      <label for="photoUpload">Passport Photo</label>
-      <input type="file" id="photoUpload" accept="image/*">
-      <img id="photoPreview" alt="Photo Preview">
-    </div>
- 
+  <!-- PHOTO UPLOAD -->
+  <div class="photo-box" style="float: right;">
+    <label for="photoUpload">Passport Photo</label>
+    <input type="file" id="photoUpload" accept="image/*">
+    <img id="photoPreview" alt="Photo Preview">
+  </div>
 
   <h2>REGISTRATION FORM</h2>
 
- 
-  <label>Surname:
-    <input type="text" id="surname" required>
-  </label>
+  <!-- PERSONAL INFORMATION -->
+  <fieldset>
+    <legend>Personal Information</legend>
 
-  <label>First Name:
-    <input type="text" id="firstname" required>
-  </label>
+    <label for="surname">Surname:</label>
+    <input type="text" id="surname" name="surname" required>
 
-  <label>Other Names:
-      <input type="text" id="othernames" name="othernames">
-    </label>
+    <label for="firstname">First Name:</label>
+    <input type="text" id="firstname" name="firstname" required>
 
-    <label>Sex:
-      <input type="radio" name="sex" value="Male" id="male"> Male
-      <input type="radio" name="sex" value="Female" id="female"> Female
-    </label>
+    <label for="othernames">Other Names:</label>
+    <input type="text" id="othernames" name="othernames">
 
-    <label>Nationality:
-      <input type="text" id="nationality" name="nationality">
-    </label>
+    <label>Sex:</label>
+    <input type="radio" name="sex" value="Male" id="male"> Male
+    <input type="radio" name="sex" value="Female" id="female"> Female
 
-    <label>Date of Birth:
-      <input type="date" id="dob" name="dob">
-    </label>
+    <label for="nationality">Nationality:</label>
+    <input type="text" id="nationality" name="nationality">
 
-    <label>Telephone:
-      <input type="tel" id="Telephone" name="phone">
-    </label>
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob">
 
-    <label>Email:
-      <input type="email" id="email" name="email" required>
-    </label>
+    <label for="Telephone">Telephone:</label>
+    <input type="tel" id="Telephone" name="phone">
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
   </fieldset>
 
+  <!-- EMERGENCY CONTACT -->
   <fieldset>
     <legend>Emergency Contact</legend>
+    <label for="emergency_name">Name:</label>
+    <input type="text" id="emergency_name" name="emergency_name">
 
-    <label>Name:
-      <input type="text" id="emergency_name" name="emergency_name">
-    </label>
-
-   
-    <label>Telephone:
-      <input type="tel" id="emergency_phone" name="emergency_phone">
-    </label>
+    <label for="emergency_phone">Telephone:</label>
+    <input type="tel" id="emergency_phone" name="emergency_phone">
   </fieldset>
 
   <!-- SIGNATURE SECTION -->
-<div class="signature-section">
-  <label>Signature:</label>
-  <canvas id="signaturePad"></canvas>
-  <button type="button" id="clearSignature">Clear Signature</button>
-</div>
+  <div class="signature-section">
+    <label>Signature:</label>
+    <canvas id="signaturePad"></canvas>
+    <button type="button" id="clearSignature">Clear Signature</button>
+  </div>
 
-
-   <fieldset>
+  <!-- TRAINING CHOICES -->
+  <fieldset>
     <legend>Choice of Training</legend>
-
     <label><input type="checkbox" name="training" value="Super-Express"> Super-Express Driving</label>
     <label><input type="checkbox" name="training" value="Express"> Express Driving</label>
     <label><input type="checkbox" name="training" value="Normal"> Normal Driving</label>
     <label><input type="checkbox" name="training" value="Hourly"> Hourly Drive</label>
   </fieldset>
 
-   <button type="submit">Submit Registration</button>
+  <!-- BUTTONS -->
+  <button type="submit">Submit Registration</button>
   <button type="button" onclick="window.print()">Print</button>
 
 </form>
@@ -106,3 +94,7 @@
 <script src="script.js"></script>
 </body>
 </html>
+
+
+
+
