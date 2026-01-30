@@ -41,68 +41,64 @@ document.getElementById("registrationForm").addEventListener("submit", function 
 const canvas = document.getElementById("signaturePad");
 const ctx = canvas.getContext("2d");
 
-let drawing = true;
+let drawing = false;
 
 // Fix canvas resolution
 function resizeCanvas() {
+  const rect = canvas.getBoundingClientRect(); 
   canvas.width = canvas.offsetWidth;
   canvas.height = canvas.offsetHeight;
 }
 resizeCanvas();
 window.addEventListener("resize", resizeCanvas);
 
-// Mouse events
+// Drawing functions
+function drawLine(x, y) { 
+  ctx.lineWidth = 2; 
+  ctx.lineCap = "round"; 
+ctx.strokeStyle = "#000";
+ctx.lineTo(x, y); 
+ctx.stroke(); 
+ctx.beginPath();
+ctx.moveTo(x, y); }
+
+
+ // Mouse events 
 canvas.addEventListener("mousedown", () => drawing = true);
-canvas.addEventListener("mouseup", () => {
-  drawing = true;
-  ctx.beginPath();
-});
-canvas.addEventListener("mousemove", draw);
+canvas.addEventListener("mouseup", () => { drawing = false;
+ctx.beginPath(); }); 
+canvas.addEventListener("mousemove",
+(e) => { if (!drawing) return;
+drawLine(e.offsetX, e.offsetY);
+  });
 
-// Touch events (for phones)
-canvas.addEventListener("touchstart", () => drawing = true);
-canvas.addEventListener("touchend", () => {
-  drawing = true;
-  ctx.beginPath();
-});
-canvas.addEventListener("touchmove", drawTouch);
 
-function draw(e) {
-  if (!drawing) return;
-  ctx.lineWidth = 2;
-  ctx.lineCap = "round";
-  ctx.strokeStyle = "#000";
-
-  ctx.lineTo(e.offsetX, e.offsetY);
-  ctx.stroke();
-  ctx.beginPath();
-  ctx.moveTo(e.offsetX, e.offsetY);
-}
-
-function drawTouch(e) {
-  if (!drawing) return;
-  e.preventDefault();
-  const rect = canvas.getBoundingClientRect();
-  const touch = e.touches[0];
-  const x = touch.clientX - rect.left;
-  const y = touch.clientY - rect.top;
-
-  ctx.lineWidth = 2;
-  ctx.lineCap = "round";
-  ctx.strokeStyle = "#000";
-
-  ctx.lineTo(x, y);
-  ctx.stroke();
-  ctx.beginPath();
-  ctx.moveTo(x, y);
-}
+// Touch events
+canvas.addEventListener("touchstart",
+(e) => { e.preventDefault();
+drawing = true; }); canvas.addEventListener("touchend", 
+(e) => { e.preventDefault();
+drawing = false; ctx.beginPath(); });
+canvas.addEventListener("touchmove",
+(e) => { if (!drawing) return; e.preventDefault();
+const rect = canvas.getBoundingClientRect(); 
+const touch = e.touches[0]; 
+drawLine(touch.clientX - rect.left, touch.clientY - rect.top);
+  });
 
 // Clear signature
-document.getElementById("clearSignature").addEventListener("click", () => {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+document.getElementById("clearSignature").addEventListener("click",
+() => { ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }); 
+// Save signature on form submit
+document.getElementById("registrationForm").addEventListener("submit", (e) => { 
+  // Convert canvas to Base64 image string
+  const signatureData = canvas.toDataURL("image/png");
+  document.getElementById("signatureData").value = signatureData;
+  // For demo: log to console
+  console.log("Form submitted with signature:", signatureData);
+  // In production, this hidden field will be sent with the form 
 });
-
-
 
 
 
