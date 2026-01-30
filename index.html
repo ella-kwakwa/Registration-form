@@ -70,11 +70,13 @@
   </fieldset>
 
   <!-- SIGNATURE SECTION -->
-  <div class="signature-section">
-    <label>Signature:</label>
-    <canvas id="signaturePad"></canvas>
-    <button type="button" id="clearSignature">Clear Signature</button>
-  </div>
+  <fieldset>
+  <legend>Signature</legend>
+  <canvas id="signaturePad"></canvas>
+  <button type="button" id="clearSignature">Clear Signature</button> 
+  <!-- Hidden field to store signature image -->
+  <input type="hidden" id="signatureData" name="signatureData"> 
+  </fieldset>
 
   <!-- TRAINING CHOICES -->
   <fieldset>
@@ -94,6 +96,7 @@
 <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
