@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HSE Drive Registration Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<form id="registrationForm">
+
+  <!-- HEADER -->
+  <div class="header">
+    <img src="HSE_logo.png" alt="HSE Drive Logo" class="logo">
+
+
+    <div>
+         <h5>Tel: 0302712082/0501398025</h5>
+         <h5>Email: hsedrive7@gmail.com</h5>
+         <h5>Website: Hsedrivegh.com</h5>
+         <h5>Loc: Sakumono Estate junction, adjacent C&J Hospital</h5>
+    </div>
+
+   </div>
+
+
+    <div class="photo-box" style="float: right;">
+      <label for="photoUpload">Passport Photo</label>
+      <input type="file" id="photoUpload" accept="image/*">
+      <img id="photoPreview" alt="Photo Preview">
+    </div>
+ 
+
+  <h2>REGISTRATION FORM</h2>
+
+ 
+  <label>Surname:
+    <input type="text" id="surname" required>
+  </label>
+
+  <label>First Name:
+    <input type="text" id="firstname" required>
+  </label>
+
+  <label>Other Names:
+      <input type="text" id="othernames" name="othernames">
+    </label>
+
+    <label>Sex:
+      <input type="radio" name="sex" value="Male" id="male"> Male
+      <input type="radio" name="sex" value="Female" id="female"> Female
+    </label>
+
+    <label>Nationality:
+      <input type="text" id="nationality" name="nationality">
+    </label>
+
+    <label>Date of Birth:
+      <input type="date" id="dob" name="dob">
+    </label>
+
+    <label>Telephone:
+      <input type="tel" id="Telephone" name="phone">
+    </label>
+
+    <label>Email:
+      <input type="email" id="email" name="email" required>
+    </label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Emergency Contact</legend>
+
+    <label>Name:
+      <input type="text" id="emergency_name" name="emergency_name">
+    </label>
+
+   
+    <label>Telephone:
+      <input type="tel" id="emergency_phone" name="emergency_phone">
+    </label>
+  </fieldset>
+
+  <!-- SIGNATURE SECTION -->
+<div class="signature-section">
+  <label>Signature:</label>
+  <canvas id="signaturePad"></canvas>
+  <button type="button" id="clearSignature">Clear Signature</button>
+</div>
+
+
+   <fieldset>
+    <legend>Choice of Training</legend>
+
+    <label><input type="checkbox" name="training" value="Super-Express"> Super-Express Driving</label>
+    <label><input type="checkbox" name="training" value="Express"> Express Driving</label>
+    <label><input type="checkbox" name="training" value="Normal"> Normal Driving</label>
+    <label><input type="checkbox" name="training" value="Hourly"> Hourly Drive</label>
+  </fieldset>
+
+   <button type="submit">Submit Registration</button>
+  <button type="button" onclick="window.print()">Print</button>
+
+</form>
+
+<script src="script.js"></script>
+</body>
+</html>

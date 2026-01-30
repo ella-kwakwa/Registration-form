@@ -1,0 +1,95 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+}
+
+form {
+  background: #fff;
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input {
+  width: 100%;
+  padding: 6px;
+  margin-top: 3px;
+}
+
+.logo {
+  width: 150px;
+}
+
+.photo-box {
+  border: 1px solid #000;
+  width: 150px;
+  height: 180px;
+  text-align: center;
+  padding: 5px;
+}
+
+.photo-box input {
+  width: 100%;
+}
+
+fieldset {
+  border: 1px solid #000;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+.photo-box img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: none;
+}
+
+h2 {
+  text-align: center;
+  text-decoration: underline;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 15px;
+  margin-top: 10px;
+}
+
+.signature-section {
+  margin-top: 20px;
+}
+
+#signaturePad {
+  border: 1px solid #000;
+  width: 100%;
+  height: 100px;
+  cursor: crosshair;
+}
+
+#clearSignature {
+  margin-top: 5px;
+}
+
+@media print {
+  #clearSignature {
+    display: none;
+  }
+}
+
+
+@media print {
+  input, button {
+    display: none;
+  }
+}
