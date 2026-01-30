@@ -20,6 +20,7 @@ input {
   width: 100%;
   padding: 6px;
   margin-top: 3px;
+  box-sizing: border-box;
 }
 
 .logo {
@@ -81,15 +82,21 @@ button {
   margin-top: 5px;
 }
 
+/* Print styles */
 @media print {
+  /* Hide buttons and file inputs */
+  button,
+  input[type="file"],
   #clearSignature {
     display: none;
   }
-}
 
-
-@media print {
-  input, button {
-    display: none;
+  /* Make text inputs print values cleanly */
+  input {
+    border: none;
+    background: transparent;
+    color: #000;
   }
 }
+
+
