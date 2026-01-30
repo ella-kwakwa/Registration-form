@@ -16,27 +16,6 @@ photoUpload.addEventListener("change", function () {
   }
 });
 
-(function () {
-  emailjs.init("pY-azAbJIrvekKzWE"); // from EmailJS
-})();
-
-document.getElementById("registrationForm").addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  emailjs.sendForm(
-    "YOUR_SERVICE_ID",service_p6s4o8h,
-    "YOUR_TEMPLATE_ID",template_ku26fli,
-    this
-  ).then(
-    function () {
-      alert("Registration submitted successfully. A copy has been sent to your email.");
-    },
-    function (error) {
-      alert("Failed to send form. Please try again.");
-      console.log(error);
-    }
-  );
-});
 
 const canvas = document.getElementById("signaturePad");
 const ctx = canvas.getContext("2d");
@@ -101,4 +80,5 @@ function drawTouch(e) {
 document.getElementById("clearSignature").addEventListener("click", () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 });
+
 
