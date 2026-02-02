@@ -99,6 +99,11 @@ document.getElementById("registrationForm").addEventListener("submit", (e) => {
   console.log("Form submitted with signature:", signatureData);
   // In production, this hidden field will be sent with the form 
 });
+document.getElementById("registrationForm").addEventListener("submit", function () {
+  const signatureData = canvas.toDataURL("image/png");
+  document.getElementById("signatureInput").value = signatureData;
+});
+
 
 
 
